@@ -1,7 +1,4 @@
 from sage.all import *
-from sage.all_cmdline import *
-import time
-from __future__ import print_function
 from typing import Optional, Iterable, Iterator, Tuple
 
 

@@ -83,3 +83,21 @@ def gaussianReduction(v1: np.ndarray, v2: np.ndarray) -> int:
             return (v1.dot(v2))
 
         v2 = v2 - m * v1
+
+
+def egcd(x: int, y: int) -> (int, int):
+    if x < y:
+        x, y = y, x
+
+    a, b = x, y
+    u1, u2 = 1, 0
+    v1, v2 = 0, 1
+
+    while b > 0:
+        q, r = divmod(a, b)
+        a, b = b, r
+
+        u1, u2 = u2, u1 - q * u2
+        v1, v2 = v2, v1 - q * v2
+
+    return u1, v1
